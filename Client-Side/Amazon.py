@@ -29,7 +29,7 @@ def scrape_product_details_amazon(product_link):
         rating_element = web_driver.find_elements(by='xpath', value='.//a[@class="a-popover-trigger a-declarative"]')
         image_element = web_driver.find_elements(by='xpath',
                                                  value='.//img[@class="a-dynamic-image a-stretch-vertical"]')
-
+    
         review_collection = []
         for review_element in review_elements:
             review_text = review_element.text
@@ -79,7 +79,7 @@ def web_scraping_amazon(product_link):
     related_products = []
 
     product_elements = web_driver.find_elements(by='xpath', value='//*[@data-component-type="s-search-result"]')
-
+    #Xpath is a language for traversing XML documents
     # Here, as of now we'll return only 5 products details as it takes time to scrape the data
     for product in product_elements:
         product_detail_link = product.find_elements(by='xpath',
